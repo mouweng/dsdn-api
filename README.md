@@ -1,37 +1,73 @@
-# dsdn-api
+# gin-Template
+> 这是一个基于gin框架的web server服务快速脚手架
 
-#### 介绍
-dsdn项目后端api
+## 目录说明
+ - api：本项目所有提供的api接口
+ - config：本项目配置文件
+ - middleware：中间件
+ - model：数据库操作持久层
+ - modelgenerator：根据建表语句自动生成model层代码
+ - utils：工具包
+ - build.sh：编译脚本
+ - main.go：本项目入口
+ - README.md：项目说明文档
 
-#### 软件架构
-软件架构说明
+## 启动流程
+```
+sh build.sh
+./main -p 80
+```
 
+## 新建接口方式
+1. 新建文件夹，创建handler.go和task.go
+- handler.go
+```go
+package test
 
-#### 安装教程
+import "ginTemplate/api"
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+func init() {
+	api.SetRouterRegister(func(group *api.RouterGroup) {
+		rootRouter := group.Group("/test")
+		// ping测试链接
+		rootRouter.StdGET("ping", Pong)
+	})
+}
+```
+- task.go
+```go
+package test
 
-#### 使用说明
+import (
+	"ginTemplate/api"
+)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+// ping测试链接
+func Pong(c *api.Context) (int, string, interface{}) {
+	return 0, "success", api.H{"ping": "pong"}
+}
+```
+2. 在main.go中添加引用
+```go
+import(
+	_ "ginTemplate/api/test"
+)
+```
+3. 添加model层
+- 使用modelgenerator根据建表语句生成代码
+- 在api层里引用model层并调用相关函数
+```go
+import center "ginTemplate/model/center"
+func DoAddCenter(c *api.Context) (int, string, interface{}) {
+    ...
+    center, err := center.GetCenter("1 = 1 AND id = ?", id)
+    ...
+	return 0, "success", api.H{"id": id}
+}
+```
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+## 支持功能
+- 自动post传入的相关参数，生成数据库查询的条件【详见接口/test/testParam】
+- 支持事务【详见接口/message/delCenter】
+- 支持自动生成数据库增删改查代码【详见modelgenerator】
+- 支持登录验证扩展【详见middleware】
