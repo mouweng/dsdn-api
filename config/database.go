@@ -24,20 +24,20 @@ var (
 func initializeDatabase(config Config) {
 	switch config.String("mode") {
 	case "test":
-		dbAddress[DbName] = "9.134.190.21:3306"
+		dbAddress[DbName] = "121.5.49.47:3306"
 		dbUsername[DbName] = "root"
 		dbPassword[DbName] = "123456"
-		dbName[DbName] = "test"
+		dbName[DbName] = "dsdn_api"
 	case "release":
-		dbAddress[DbName] = "9.134.190.21:3306"
+		dbAddress[DbName] = "121.5.49.47:3306"
 		dbUsername[DbName] = "root"
 		dbPassword[DbName] = "123456"
-		dbName[DbName] = "test"
+		dbName[DbName] = "dsdn_api"
 	default:
-		dbAddress[DbName] = "127.0.0.1:3306"
+		dbAddress[DbName] = "121.5.49.47:3306"
 		dbUsername[DbName] = "root"
 		dbPassword[DbName] = "123456"
-		dbName[DbName] = "test"
+		dbName[DbName] = "dsdn_api"
 	}
 }
 
