@@ -1,0 +1,519 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] GET    /test/ping                --> ginTemplate/api/test.Pong (1 handlers)
+[GIN] GET    /test/testParam           --> ginTemplate/api/test.DoTestParam (1 handlers)
+[GIN] GET    /test/testQuery           --> ginTemplate/api/test.DoTestQuery (1 handlers)
+[GIN] POST   /test/testPost            --> ginTemplate/api/test.DoTestPost (1 handlers)
+[GIN] GET    /message/getCenter        --> ginTemplate/api/message.DoGetCenter (1 handlers)
+[GIN] POST   /message/addCenter        --> ginTemplate/api/message.DoAddCenter (1 handlers)
+[GIN] GET    /message/delCenter        --> ginTemplate/api/message.DoDelCenter (1 handlers)
+[GIN] GET    /image/getImage           --> ginTemplate/api/image.DoGetImage (1 handlers)
+[GIN] POST   /image/uploadImage        --> ginTemplate/api/image.DoUploadImage (1 handlers)
+[GIN] GET    /user/getUser             --> ginTemplate/api/user.DoGetUser (1 handlers)
+[GIN] POST   /user/registerUser        --> ginTemplate/api/user.DoRegisterUser (1 handlers)
+[GIN] GET    /user/followUser          --> ginTemplate/api/user.DoFollowUser (1 handlers)
+[GIN] GET    /blog/getBlog             --> ginTemplate/api/blog.DoGetBlog (1 handlers)
+[GIN] POST   /blog/addBlog             --> ginTemplate/api/blog.DoAddBlog (1 handlers)
+[GIN] GET    /blog/like                --> ginTemplate/api/blog.DoLike (1 handlers)
+[GIN] GET    /ranklist/test            --> ginTemplate/api/ranklist.DoTest (1 handlers)
+[Info] main.go:52 main.action Serve on 172.17.0.17:8080
+[1;32m2021-12-25 19:19:14 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 19:19:14 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 19:19:14 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 19:19:14 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  and id = ?  order by id desc [0m
+[1;32m2021-12-25 19:19:14 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1 1][0m
+[GIN] 2021/12/25 - 19:19:14 | 200 |    4.486651ms |     36.28.18.63 | GET      "/blog/getBlog?id=1"
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[1;32m2021-12-25 19:19:26 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 19:19:26 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 19:19:26 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 19:19:26 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 19:19:26 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 19:19:26 | 200 |    2.721482ms | 125.119.243.228 | GET      "/blog/getBlog"
+[1;32m2021-12-25 19:19:26 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 19:19:26 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 19:19:26 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 19:19:26 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and address = ?  and status = ?  order by id desc [0m
+[1;32m2021-12-25 19:19:26 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [fake 1][0m
+[GIN] 2021/12/25 - 19:19:26 | 200 |    1.184692ms | 125.119.243.228 | GET      "/user/getUser?address=fake"
+[GIN] 2021/12/25 - 19:19:38 | 200 |    5.984546ms | 125.119.243.228 | POST     "/image/uploadImage"
+[GIN] 2021/12/25 - 19:19:40 | 200 |     1.10722ms | 125.119.243.228 | GET      "/image/getImage?id=5"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[GIN] 2021/12/25 - 19:19:40 | 200 |     464.222µs | 125.119.243.228 | POST     "/blog/addBlog"
+[1;32m2021-12-25 19:20:40 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 19:20:40 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 19:20:40 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 19:20:40 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 19:20:40 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 19:20:40 | 200 |     2.75566ms | 125.119.243.228 | GET      "/blog/getBlog"
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[1;32m2021-12-25 19:20:48 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 19:20:48 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 19:20:48 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 19:20:48 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 19:20:48 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 19:20:48 | 200 |    2.637671ms | 125.119.243.228 | GET      "/blog/getBlog"
+[1;32m2021-12-25 19:20:48 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 19:20:48 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 19:20:48 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 19:20:48 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and address = ?  and status = ?  order by id desc [0m
+[1;32m2021-12-25 19:20:48 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [fake 1][0m
+[GIN] 2021/12/25 - 19:20:48 | 200 |    1.032668ms | 125.119.243.228 | GET      "/user/getUser?address=fake"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[GIN] 2021/12/25 - 19:20:58 | 200 |     229.632µs | 125.119.243.228 | POST     "/blog/addBlog"
+[GIN] 2021/12/25 - 19:21:27 | 200 | 29.121061874s | 125.119.243.228 | POST     "/image/uploadImage"
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[1;32m2021-12-25 19:22:25 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 19:22:25 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 19:22:25 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 19:22:25 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 19:22:25 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[1;32m2021-12-25 19:22:25 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 19:22:25 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 19:22:25 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 19:22:25 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and address = ?  and status = ?  order by id desc [0m
+[1;32m2021-12-25 19:22:25 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [fake 1][0m
+[GIN] 2021/12/25 - 19:22:25 | 200 |    2.762406ms | 125.119.243.228 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 19:22:25 | 200 |     959.203µs | 125.119.243.228 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 19:23:07 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 mouweng.near blog This is blog 1 http://wengyifan.com/image/getImage?id=1}[0m
+[GIN] 2021/12/25 - 19:23:07 | 200 |    2.576517ms | 125.119.243.228 | POST     "/blog/addBlog"
+[1;32m2021-12-25 19:23:17 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 mouweng.near blog This is blog 2 http://wengyifan.com/image/getImage?id=1}[0m
+[GIN] 2021/12/25 - 19:23:17 | 200 |    3.499027ms | 125.119.243.228 | POST     "/blog/addBlog"
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[1;32m2021-12-25 19:23:29 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 19:23:29 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 19:23:29 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 19:23:29 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 19:23:29 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[1;32m2021-12-25 19:23:29 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 19:23:29 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 19:23:29 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 19:23:29 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and address = ?  and status = ?  order by id desc [0m
+[1;32m2021-12-25 19:23:29 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [fake 1][0m
+[GIN] 2021/12/25 - 19:23:29 | 200 |    2.699591ms | 125.119.243.228 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 19:23:29 | 200 |     956.046µs | 125.119.243.228 | GET      "/user/getUser?address=fake"
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[1;32m2021-12-25 19:25:33 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 19:25:33 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 19:25:33 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 19:25:33 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 19:25:33 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 19:25:33 | 200 |    2.629009ms | 125.119.243.228 | GET      "/blog/getBlog"
+[1;32m2021-12-25 19:25:33 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 19:25:33 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 19:25:33 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 19:25:33 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 19:25:33 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 19:25:33 | 200 |     950.673µs | 125.119.243.228 | GET      "/user/getUser?address=fake"
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[1;32m2021-12-25 19:26:37 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 19:26:37 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 19:26:37 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 19:26:37 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 19:26:37 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 19:26:37 | 200 |    1.259305ms | 125.119.243.228 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 19:26:37 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 19:26:37 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 19:26:37 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 19:26:37 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 19:26:37 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 19:26:37 | 200 |    2.616754ms | 125.119.243.228 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 19:26:49 | 200 |  155.966494ms | 125.119.243.228 | POST     "/image/uploadImage"
+[GIN] 2021/12/25 - 19:26:55 | 200 |    1.260869ms | 125.119.243.228 | GET      "/image/getImage?id=5"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[1;32m2021-12-25 19:26:55 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 default  dasczxxzczsaddas 2 http://wengyifan.com:8080/image/getImage?id=5}[0m
+[GIN] 2021/12/25 - 19:26:55 | 200 |     701.649µs | 125.119.243.228 | POST     "/blog/addBlog"
+[GIN] 2021/12/25 - 19:27:32 | 200 |    1.885304ms | 125.119.243.228 | POST     "/blog/addBlog"
+[1;32m2021-12-25 19:27:43 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 mouweng.near blog This is blog 1 http://wengyifan.com/image/getImage?id=1}[0m
+[GIN] 2021/12/25 - 19:27:43 | 200 |    2.587687ms | 125.119.243.228 | POST     "/blog/addBlog"
+[1;32m2021-12-25 19:27:54 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 19:27:54 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 19:27:54 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 19:27:54 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 19:27:54 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 19:27:54 | 200 |    2.680215ms | 125.119.243.228 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 19:28:39 | 200 |  7.495139096s | 125.119.243.228 | GET      "/image/getImage?id=2"
+[GIN] 2021/12/25 - 19:29:16 | 200 |    1.173084ms | 125.119.243.228 | GET      "/image/getImage?id=5"
+[GIN] 2021/12/25 - 19:29:20 | 200 |     989.976µs | 125.119.243.228 | GET      "/image/getImage?id=6"
+[GIN] 2021/12/25 - 19:29:22 | 200 |    2.303162ms | 125.119.243.228 | GET      "/image/getImage?id=5"
+[1;32m2021-12-25 19:29:32 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 mouweng.near blog This is blog 1 http://wengyifan.com/image/getImage?id=5}[0m
+[GIN] 2021/12/25 - 19:29:32 | 200 |    2.480888ms | 125.119.243.228 | POST     "/blog/addBlog"
+[GIN] 2021/12/25 - 19:30:58 | 404 |       1.021µs |    185.53.90.24 | GET      "/"
+[GIN] 2021/12/25 - 19:31:03 | 404 |       1.471µs |    185.53.90.24 | CONNECT  ""
+[1;32m2021-12-25 19:48:24 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 mouweng.near blog This is blog 1 http://wengyifan.com/image/getImage?id=1}[0m
+[GIN] 2021/12/25 - 19:48:24 | 200 |    2.229056ms |   39.174.145.34 | POST     "/blog/addBlog"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN] GET    /test/ping                --> ginTemplate/api/test.Pong (1 handlers)
+[GIN] GET    /test/testParam           --> ginTemplate/api/test.DoTestParam (1 handlers)
+[GIN] GET    /test/testQuery           --> ginTemplate/api/test.DoTestQuery (1 handlers)
+[GIN] POST   /test/testPost            --> ginTemplate/api/test.DoTestPost (1 handlers)
+[GIN] GET    /message/getCenter        --> ginTemplate/api/message.DoGetCenter (1 handlers)
+[GIN] POST   /message/addCenter        --> ginTemplate/api/message.DoAddCenter (1 handlers)
+[GIN] GET    /message/delCenter        --> ginTemplate/api/message.DoDelCenter (1 handlers)
+[GIN] GET    /image/getImage           --> ginTemplate/api/image.DoGetImage (1 handlers)
+[GIN] POST   /image/uploadImage        --> ginTemplate/api/image.DoUploadImage (1 handlers)
+[GIN] GET    /user/getUser             --> ginTemplate/api/user.DoGetUser (1 handlers)
+[GIN] POST   /user/registerUser        --> ginTemplate/api/user.DoRegisterUser (1 handlers)
+[GIN] GET    /user/followUser          --> ginTemplate/api/user.DoFollowUser (1 handlers)
+[GIN] GET    /blog/getBlog             --> ginTemplate/api/blog.DoGetBlog (1 handlers)
+[GIN] POST   /blog/addBlog             --> ginTemplate/api/blog.DoAddBlog (1 handlers)
+[GIN] GET    /blog/like                --> ginTemplate/api/blog.DoLike (1 handlers)
+[GIN] GET    /ranklist/test            --> ginTemplate/api/ranklist.DoTest (1 handlers)
+[Info] main.go:52 main.action Serve on 172.17.0.17:8080
+[1;32m2021-12-25 19:52:16 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 mouweng.near blog This is blog 1 http://wengyifan.com/image/getImage?id=1}[0m
+[GIN] 2021/12/25 - 19:52:16 | 200 |   12.356683ms |   39.174.145.34 | POST     "/blog/addBlog"
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[1;32m2021-12-25 21:08:19 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 21:08:19 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 21:08:19 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 21:08:19 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 21:08:19 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 21:08:19 | 200 |    1.457075ms | 183.157.162.155 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 21:08:19 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 21:08:19 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 21:08:19 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 21:08:19 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:08:19 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 21:08:19 | 200 |    4.069785ms | 183.157.162.155 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 21:09:35 | 200 |    6.855131ms | 183.157.162.155 | POST     "/image/uploadImage"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[GIN] 2021/12/25 - 21:09:39 | 200 |    1.193721ms | 183.157.162.155 | GET      "/image/getImage?id=5"
+[GIN] 2021/12/25 - 21:09:39 | 200 |     215.899µs | 183.157.162.155 | POST     "/blog/addBlog"
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[1;32m2021-12-25 21:10:52 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 21:10:52 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 21:10:52 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 21:10:52 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:10:52 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[1;32m2021-12-25 21:10:52 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 21:10:52 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 21:10:52 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 21:10:52 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and address = ?  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:10:52 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [fake 1][0m
+[GIN] 2021/12/25 - 21:10:52 | 200 |    3.685187ms | 183.157.162.155 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 21:10:52 | 200 |    3.477427ms | 183.157.162.155 | GET      "/user/getUser?address=fake"
+[GIN] 2021/12/25 - 21:11:05 | 200 |    5.814571ms | 183.157.162.155 | POST     "/image/uploadImage"
+[GIN] 2021/12/25 - 21:11:06 | 200 |    1.578837ms | 183.157.162.155 | GET      "/image/getImage?id=5"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[1;32m2021-12-25 21:11:06 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 default  from redux 2 http://wengyifan.com:8080/image/getImage?id=5}[0m
+[GIN] 2021/12/25 - 21:11:06 | 200 |    1.473309ms | 183.157.162.155 | POST     "/blog/addBlog"
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[1;32m2021-12-25 21:13:12 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 21:13:12 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 21:13:12 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 21:13:12 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 21:13:12 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 21:13:12 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 21:13:12 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[1;32m2021-12-25 21:13:12 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 21:13:12 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:13:12 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 21:13:12 | 200 |    1.255617ms | 183.157.162.155 | GET      "/user/getUser?address=fake"
+[GIN] 2021/12/25 - 21:13:12 | 200 |    4.837027ms | 183.157.162.155 | GET      "/blog/getBlog"
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[1;32m2021-12-25 21:16:04 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 21:16:04 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 21:16:04 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 21:16:04 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:16:04 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 21:16:04 | 200 |    4.913649ms | 183.157.162.155 | GET      "/blog/getBlog"
+[1;32m2021-12-25 21:16:04 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 21:16:04 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 21:16:04 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 21:16:04 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 21:16:04 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 21:16:04 | 200 |    1.325162ms | 183.157.162.155 | GET      "/user/getUser?address=fake"
+[GIN] 2021/12/25 - 21:16:17 | 200 |   14.219673ms | 183.157.162.155 | POST     "/image/uploadImage"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[GIN] 2021/12/25 - 21:16:19 | 200 |    1.585847ms | 183.157.162.155 | GET      "/image/getImage?id=5"
+[1;32m2021-12-25 21:16:19 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 fake  from redux  2 http://wengyifan.com:8080/image/getImage?id=5}[0m
+[GIN] 2021/12/25 - 21:16:19 | 200 |   10.358695ms | 183.157.162.155 | POST     "/blog/addBlog"
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[1;32m2021-12-25 21:17:10 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 21:17:10 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 21:17:10 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 21:17:10 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 21:17:10 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 21:17:10 | 200 |    1.706833ms | 183.157.162.155 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 21:17:10 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 21:17:10 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 21:17:10 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 21:17:10 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:17:10 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 21:17:10 | 200 |    5.398251ms | 183.157.162.155 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 21:17:10 | 200 |      1.2944ms | 183.157.162.155 | GET      "/image/getImage?id=5"
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[1;32m2021-12-25 21:18:45 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 21:18:45 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 21:18:45 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 21:18:45 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:18:45 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 21:18:45 | 200 |    5.988803ms | 183.157.162.155 | GET      "/blog/getBlog"
+[1;32m2021-12-25 21:18:45 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 21:18:45 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 21:18:45 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 21:18:45 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 21:18:45 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 21:18:45 | 200 |    1.321604ms | 183.157.162.155 | GET      "/user/getUser?address=fake"
+[GIN] 2021/12/25 - 21:18:45 | 200 |    1.263595ms | 183.157.162.155 | GET      "/image/getImage?id=5"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[GIN] 2021/12/25 - 21:20:11 | 200 |     226.125µs | 183.157.162.155 | POST     "/blog/addBlog"
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[1;32m2021-12-25 21:21:20 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 21:21:20 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 21:21:20 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 21:21:20 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:21:20 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 21:21:20 | 200 |    5.900147ms | 183.157.162.155 | GET      "/blog/getBlog"
+[1;32m2021-12-25 21:21:20 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 21:21:20 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 21:21:20 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 21:21:20 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 21:21:20 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 21:21:20 | 200 |    1.306878ms | 183.157.162.155 | GET      "/user/getUser?address=fake"
+[GIN] 2021/12/25 - 21:21:20 | 200 |    1.494506ms | 183.157.162.155 | GET      "/image/getImage?id=5"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[1;32m2021-12-25 21:21:31 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 fake  text test 2 }[0m
+[GIN] 2021/12/25 - 21:21:31 | 200 |   25.371044ms | 183.157.162.155 | POST     "/blog/addBlog"
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[1;32m2021-12-25 21:23:37 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 21:23:37 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 21:23:37 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 21:23:37 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 21:23:37 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 21:23:37 | 200 |    1.602355ms | 183.157.162.155 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 21:23:37 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 21:23:37 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 21:23:37 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 21:23:37 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:23:37 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 21:23:37 | 200 |    6.863426ms | 183.157.162.155 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 21:23:37 | 200 |    1.404348ms | 183.157.162.155 | GET      "/image/getImage?id=5"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[1;32m2021-12-25 21:23:50 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 fake  test 2 2 }[0m
+[GIN] 2021/12/25 - 21:23:50 | 200 |    12.48695ms | 183.157.162.155 | POST     "/blog/addBlog"
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[1;32m2021-12-25 21:24:23 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 21:24:23 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 21:24:23 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 21:24:23 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:24:23 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 21:24:23 | 200 |     9.12064ms | 183.157.162.155 | GET      "/blog/getBlog"
+[1;32m2021-12-25 21:24:23 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 21:24:23 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 21:24:23 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 21:24:23 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and address = ?  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:24:23 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [fake 1][0m
+[GIN] 2021/12/25 - 21:24:23 | 200 |    1.292842ms | 183.157.162.155 | GET      "/user/getUser?address=fake"
+[GIN] 2021/12/25 - 21:24:23 | 200 |    1.248812ms | 183.157.162.155 | GET      "/image/getImage?id=5"
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[1;32m2021-12-25 21:46:27 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 21:46:27 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 21:46:27 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 21:46:27 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:46:27 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 21:46:27 | 200 |    7.997124ms | 183.157.162.153 | GET      "/blog/getBlog"
+[1;32m2021-12-25 21:46:27 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 21:46:27 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 21:46:27 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 21:46:27 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 21:46:27 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 21:46:27 | 200 |    1.338596ms | 183.157.162.153 | GET      "/user/getUser?address=fake"
+[GIN] 2021/12/25 - 21:46:27 | 200 |    1.367195ms | 183.157.162.153 | GET      "/image/getImage?id=5"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[1;32m2021-12-25 21:48:03 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 fake  // json格式
+{
+	"name":"Sam",
+	"age":18
+} 2 }[0m
+[GIN] 2021/12/25 - 21:48:03 | 200 |   11.378141ms | 183.157.162.153 | POST     "/blog/addBlog"
+[1;32m2021-12-25 21:48:57 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 21:48:57 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 21:48:57 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 21:48:57 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and address = ?  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:48:57 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [fake 1][0m
+[GIN] 2021/12/25 - 21:48:57 | 200 |    1.669643ms | 183.157.162.153 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 21:48:57 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 21:48:57 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 21:48:57 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 21:48:57 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 21:48:57 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 21:48:57 | 200 |    8.911512ms | 183.157.162.153 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 21:48:58 | 200 |    1.483955ms | 183.157.162.153 | GET      "/image/getImage?id=5"
+[1;32m2021-12-25 22:00:26 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 22:00:26 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 22:00:26 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 22:00:26 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 22:00:26 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 22:00:26 | 200 |    1.671354ms | 183.157.162.153 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 22:00:26 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 22:00:26 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 22:00:26 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 22:00:26 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:00:26 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 22:00:26 | 200 |    9.112276ms | 183.157.162.153 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 22:00:26 | 200 |      1.6772ms | 183.157.162.153 | GET      "/image/getImage?id=5"
+[GIN-debug] redirecting request 301: /blog/getBlog --> /blog/getBlog?
+[GIN-debug] redirecting request 301: /user/getUser --> /user/getUser?address=fake
+[1;32m2021-12-25 22:00:53 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 22:00:53 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 22:00:53 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 22:00:53 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and address = ?  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:00:53 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [fake 1][0m
+[1;32m2021-12-25 22:00:53 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 22:00:53 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 22:00:53 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 22:00:53 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:00:53 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 22:00:53 | 200 |    2.551422ms | 183.157.162.153 | GET      "/user/getUser?address=fake"
+[GIN] 2021/12/25 - 22:00:53 | 200 |     8.50063ms | 183.157.162.153 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 22:00:53 | 200 |    1.340593ms | 183.157.162.153 | GET      "/image/getImage?id=5"
+[1;32m2021-12-25 22:01:29 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 22:01:29 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 22:01:29 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 22:01:29 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and address = ?  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:01:29 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [fake 1][0m
+[GIN] 2021/12/25 - 22:01:29 | 200 |    1.641396ms | 183.157.162.153 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 22:01:30 | 200 |    1.575849ms | 183.157.162.153 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 22:01:30 | 200 |    8.859731ms | 183.157.162.153 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 22:01:30 | 200 |    1.439088ms | 183.157.162.153 | GET      "/image/getImage?id=5"
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:01:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 22:01:30 | 200 |    8.809902ms | 183.157.162.153 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 22:01:30 | 200 |    1.470693ms | 183.157.162.153 | GET      "/image/getImage?id=5"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[1;32m2021-12-25 22:05:27 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 fake  This is async! 2 }[0m
+[GIN] 2021/12/25 - 22:05:27 | 200 |   17.414855ms | 183.157.162.153 | POST     "/blog/addBlog"
+[1;32m2021-12-25 22:07:36 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 22:07:36 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 22:07:36 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 22:07:36 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 22:07:36 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 22:07:36 | 200 |    1.825514ms | 183.157.162.153 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 22:07:36 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 22:07:36 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 22:07:36 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 22:07:36 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:07:36 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 22:07:36 | 200 |   10.388885ms | 183.157.162.153 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 22:07:36 | 200 |    1.803395ms | 183.157.162.153 | GET      "/image/getImage?id=5"
+[1;32m2021-12-25 22:13:43 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 22:13:43 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 22:13:43 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 22:13:43 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 22:13:43 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 22:13:43 | 200 |    1.703928ms | 183.157.162.153 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 22:13:44 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 22:13:44 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 22:13:44 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 22:13:44 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:13:44 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 22:13:44 | 200 |   11.529416ms | 183.157.162.153 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 22:13:44 | 200 |    1.501165ms | 183.157.162.153 | GET      "/image/getImage?id=5"
+[GIN] 2021/12/25 - 22:16:25 | 200 |   73.853585ms | 183.157.162.153 | POST     "/image/uploadImage"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[GIN] 2021/12/25 - 22:16:41 | 200 |     262.632µs | 183.157.162.153 | POST     "/blog/addBlog"
+[1;32m2021-12-25 22:16:51 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 22:16:51 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 22:16:51 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 22:16:51 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and status = ?  and address = ?  order by id desc [0m
+[1;32m2021-12-25 22:16:51 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [1 fake][0m
+[GIN] 2021/12/25 - 22:16:51 | 200 |    1.632408ms | 183.157.162.153 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 22:16:52 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 22:16:52 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 22:16:52 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 22:16:52 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:16:52 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 22:16:52 | 200 |   10.341786ms | 183.157.162.153 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 22:16:52 | 200 |    1.370889ms | 183.157.162.153 | GET      "/image/getImage?id=5"
+[GIN] 2021/12/25 - 22:17:02 | 200 |   65.578361ms | 183.157.162.153 | POST     "/image/uploadImage"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[1;32m2021-12-25 22:17:09 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 fake  code here 2 }[0m
+[GIN] 2021/12/25 - 22:17:09 | 200 |   14.628401ms | 183.157.162.153 | POST     "/blog/addBlog"
+[1;32m2021-12-25 22:18:28 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 22:18:28 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 22:18:28 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 22:18:28 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and address = ?  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:18:28 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [fake 1][0m
+[GIN] 2021/12/25 - 22:18:28 | 200 |     1.82619ms | 183.157.162.153 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 22:18:28 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 22:18:28 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 22:18:28 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 22:18:28 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:18:28 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 22:18:28 | 200 |   11.630136ms | 183.157.162.153 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 22:18:28 | 200 |    1.560301ms | 183.157.162.153 | GET      "/image/getImage?id=5"
+[GIN] 2021/12/25 - 22:19:05 | 200 |   48.079195ms | 183.157.162.153 | POST     "/image/uploadImage"
+[GIN-debug] redirecting request 307: /blog/addBlog --> /blog/addBlog
+[1;32m2021-12-25 22:19:23 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:91] reqData: {0 fake  123 2 }[0m
+[GIN] 2021/12/25 - 22:19:23 | 200 |   11.213816ms | 183.157.162.153 | POST     "/blog/addBlog"
+[1;32m2021-12-25 22:19:30 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 22:19:30 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 22:19:30 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 22:19:30 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and address = ?  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:19:30 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [fake 1][0m
+[GIN] 2021/12/25 - 22:19:30 | 200 |    1.681419ms | 183.157.162.153 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 22:19:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 22:19:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 22:19:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 22:19:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:19:30 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 22:19:30 | 200 |     12.3286ms | 183.157.162.153 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 22:19:31 | 200 |    1.456788ms | 183.157.162.153 | GET      "/image/getImage?id=5"
+[GIN] 2021/12/25 - 22:20:55 | 200 |   57.092144ms | 183.157.162.153 | POST     "/image/uploadImage"
+[GIN] 2021/12/25 - 22:22:17 | 200 |   65.914311ms | 183.157.162.153 | POST     "/image/uploadImage"
+[1;32m2021-12-25 22:22:25 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:27] page: 1[0m
+[1;32m2021-12-25 22:22:25 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:28] pageSize: 10000[0m
+[1;32m2021-12-25 22:22:25 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:29] code: 0[0m
+[1;32m2021-12-25 22:22:25 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:46] strCondition:  1=1  and address = ?  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:22:25 [DEBG] [/root/gocode/dsdn-api/api/user/task.go:47] args: [fake 1][0m
+[GIN] 2021/12/25 - 22:22:25 | 200 |    1.651449ms | 183.157.162.153 | GET      "/user/getUser?address=fake"
+[1;32m2021-12-25 22:22:25 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:30] page: 1[0m
+[1;32m2021-12-25 22:22:25 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:31] pageSize: 10000[0m
+[1;32m2021-12-25 22:22:25 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:32] code: 0[0m
+[1;32m2021-12-25 22:22:25 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:49] strCondition:  1=1  and status = ?  order by id desc [0m
+[1;32m2021-12-25 22:22:25 [DEBG] [/root/gocode/dsdn-api/api/blog/task.go:50] args: [1][0m
+[GIN] 2021/12/25 - 22:22:25 | 200 |   12.330532ms | 183.157.162.153 | GET      "/blog/getBlog"
+[GIN] 2021/12/25 - 22:22:25 | 200 |    1.451616ms | 183.157.162.153 | GET      "/image/getImage?id=5"
+[GIN] 2021/12/25 - 22:22:29 | 200 |   44.945571ms | 183.157.162.153 | POST     "/image/uploadImage"
+[GIN] 2021/12/25 - 22:32:37 | 404 |         892ns |  121.46.142.244 | HEAD     "/blog/addBlog"

@@ -1,5 +1,5 @@
-# gin-Template
-> 这是一个基于gin框架的web server服务快速脚手架
+# DSDN-API
+> 这是DSDN项目后端API部分，使用Go语言实现，一个基于gin框架的web server服务。
 
 ## 目录说明
  - api：本项目所有提供的api接口
@@ -15,7 +15,7 @@
 ## 启动流程
 ```
 sh build.sh
-./main -p 80
+./main -p 8080
 ```
 
 ## 新建接口方式

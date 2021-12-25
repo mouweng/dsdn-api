@@ -17,6 +17,9 @@ import (
 	_ "ginTemplate/api/test"
 	_ "ginTemplate/api/message"
 	_ "ginTemplate/api/image"
+	_ "ginTemplate/api/user"
+	_ "ginTemplate/api/blog"
+	_ "ginTemplate/api/ranklist"
 )
 
 var buildstamp = ""
