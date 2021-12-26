@@ -11,5 +11,7 @@ func init() {
 		rootRouter.StdPOST("addBlog", DoAddBlog)
 		// 点赞博文
 		rootRouter.StdGET("like", DoLike);
+		// 显示是否点赞过
+		rootRouter.StdGET("isLike", DoIsLike);
 	})
 }

@@ -194,3 +194,25 @@ func DoLike(c *api.Context) (int, string, interface{}) {
 
 	return 0, "success", nil
 }
+
+
+func DoIsLike(c *api.Context) (int, string, interface{}) {
+	uId, err := strconv.Atoi(c.Query("uId"))
+	if err != nil {
+		return api.IllegalArgument, c.Error(err).Error(), ""
+	}
+	blogId, err := strconv.Atoi(c.Query("blogId"))
+	if err != nil {
+		return api.IllegalArgument, c.Error(err).Error(), ""
+	}
+	// 检测这个点赞是否存在
+	bl, err := blog.GetBlogLike("1 = 1 AND status = 1 AND blogId = ? AND uId = ?", blogId, uId);
+	if err != nil {
+		return api.DatabaseError, c.Error(err).Error(), nil
+	}
+	if bl == nil {
+		return 0, "success", api.H{"like" : 0}
+	} else {
+		return 0, "success", api.H{"like" : 1}
+	}
+}

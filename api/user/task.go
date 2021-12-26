@@ -3,6 +3,7 @@ package user
 import (
 	"ginTemplate/api"
 	user "ginTemplate/model/user"
+	"strconv"
 	"time"
 
 	"github.com/wonderivan/logger"
@@ -98,5 +99,33 @@ func DoRegisterUser(c *api.Context) (int, string, interface{}) {
 
 // 注册用户
 func DoFollowUser(c *api.Context) (int, string, interface{}) {
+	uId1, err := strconv.Atoi(c.Query("uId1"))
+	if err != nil {
+		return api.IllegalArgument, c.Error(err).Error(), ""
+	}
+	uId2, err := strconv.Atoi(c.Query("uId2"))
+	if err != nil {
+		return api.IllegalArgument, c.Error(err).Error(), ""
+	}
+	// 校验u1和u2是否存在
+	user1, err := user.GetUser("1 = 1 AND status = 1 AND id = ?", uId1)
+	if err != nil {
+		return api.DatabaseError, c.Error(err).Error(), nil
+	}
+	if user1 == nil {
+		return api.DatabaseError, c.Error("用户不存在").Error(), nil
+	}
+	// 校验u1和u2是否存在
+	user2, err := user.GetUser("1 = 1 AND status = 1 AND id = ?", uId2)
+	if err != nil {
+		return api.DatabaseError, c.Error(err).Error(), nil
+	}
+	if user2 == nil {
+		return api.DatabaseError, c.Error("用户不存在").Error(), nil
+	}
+
+	// 关注表， 和like的逻辑类似！
+
+
 	return 0, "", nil
 }
