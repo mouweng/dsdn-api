@@ -18,6 +18,7 @@ type RequestInfo struct{
 	BlogText string `json:"blogText" binding:"required"`
 	UId int `json:"uId" binding:"required"`
 	ImageUrl string `json:"imageUrl"`
+	IpfsUrl string `json:"ipfsUrl"`
 }
 
 
@@ -65,6 +66,7 @@ func DoGetBlog(c *api.Context) (int, string, interface{}) {
 		newMap["blogText"] = v.BlogText
 		newMap["uId"] = v.UID
 		newMap["imageUrl"] = v.ImageURL
+		newMap["ipfsUrl"] = v.IpfsURL
 		newMap["status"] = v.Status
 		newMap["creator"] = v.Creator
 		newMap["createTime"] = v.CreateTime
@@ -112,6 +114,7 @@ func DoAddBlog(c *api.Context) (int, string, interface{}) {
 		BlogText : reqData.BlogText,
 		UID : reqData.UId,
 		ImageURL : reqData.ImageUrl,
+		IpfsURL: reqData.IpfsUrl,
 		Status: 1,
 		Creator: reqData.Address,
 		CreateTime: time.Now(),
@@ -122,6 +125,32 @@ func DoAddBlog(c *api.Context) (int, string, interface{}) {
 		return api.DatabaseError, c.Error(err).Error(), nil
 	}
 	return 0, "", api.H{"id": id, "blogUrl" : "http://wengyifan.com:8080/blog/getBlog?id=" + utils.String(id)}
+}
+
+type RequestInfo2 struct{
+	ID int `json:"id"`
+	IpfsUrl string `json:"ipfsUrl"`
+}
+
+func DoUpdateBlog(c *api.Context) (int, string, interface{}) {
+	reqData := RequestInfo2{}
+	if err := c.ShouldBind(&reqData); err != nil {
+		return api.IllegalArgument, c.Error(err).Error(), nil
+	}
+	logger.Debug("reqData:",reqData);
+	b, err := blog.GetBlog("1 = 1 AND Status = 1 AND id = ?", reqData.ID);
+	if err != nil {
+		return api.DatabaseError, c.Error(err).Error(), nil
+	}
+	if b == nil {
+		return api.DatabaseError, c.Error("博客不存在").Error(), nil
+	}
+	b.IpfsURL = reqData.IpfsUrl
+	id, err := blog.UpdateBlog(b)
+	if err != nil {
+		return api.DatabaseError, c.Error(err).Error(), nil
+	}
+	return 0, "success", api.H{"id": id}
 }
 
 func DoLike(c *api.Context) (int, string, interface{}) {

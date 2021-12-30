@@ -14,12 +14,13 @@ import (
 /** JSGEN({type: "model", paged: true})
 CREATE TABLE tbBlog (
     id int(10) NOT NULL AUTO_INCREMENT  COMMENT 'ID',
-    Address varchar(512) NOT NULL COMMENT '地址',
+		Address varchar(512) NOT NULL COMMENT '地址',
     title varchar(1024) NOT NULL DEFAULT '' COMMENT '标题',
     blogText longtext NOT NULL COMMENT '博文内容',
-    uId int(10) NOT NULL DEFAULT 0 COMMENT 'userId',
-    imageUrl varchar(1024) NOT NULL DEFAULT '' COMMENT '图片地址',
-    status int(10) NOT NULL DEFAULT 1 COMMENT '记录状态：1表示可用，0表示不可用',
+		uId int(10) NOT NULL DEFAULT 0 COMMENT 'userId',
+		imageUrl varchar(1024) NOT NULL DEFAULT '' COMMENT '图片地址',
+    ipfsUrl varchar(1024) NOT NULL DEFAULT '' COMMENT 'ipfs地址',
+		status int(10) NOT NULL DEFAULT 1 COMMENT '记录状态：1表示可用，0表示不可用',
     creator varchar(64) NOT NULL DEFAULT '' COMMENT '创建者',
     createTime datetime NOT NULL COMMENT '创建时间@now',
     updater varchar(64) NOT NULL DEFAULT '' COMMENT '最后更新人',
@@ -44,6 +45,7 @@ type Blog struct {
   BlogText string `json:"blogText"`
   UID int `json:"uId"`
   ImageURL string `json:"imageUrl"`
+  IpfsURL string `json:"ipfsUrl"`
   Status int `json:"status"`
   Creator string `json:"creator"`
   CreateTime time.Time `json:"createTime"`
@@ -53,8 +55,8 @@ type Blog struct {
 
 // Add 插入Blog
 func (c BlogConnection) Add(model *Blog) (int64, error) {
-    sqlStr := "INSERT INTO `tbBlog` (`Address`, `title`, `blogText`, `uId`, `imageUrl`, `status`, `creator`, `createTime`, `updater`) VALUES(?, ?, ?, ?, ?, ?, ?, now(), ?)"
-    result, err := c().Exec(sqlStr, model.Address, model.Title, model.BlogText, model.UID, model.ImageURL, model.Status, model.Creator, model.Updater)
+    sqlStr := "INSERT INTO `tbBlog` (`Address`, `title`, `blogText`, `uId`, `imageUrl`, `ipfsUrl`, `status`, `creator`, `createTime`, `updater`) VALUES(?, ?, ?, ?, ?, ?, ?, ?, now(), ?)"
+    result, err := c().Exec(sqlStr, model.Address, model.Title, model.BlogText, model.UID, model.ImageURL, model.IpfsURL, model.Status, model.Creator, model.Updater)
     if err != nil {
         return 0, err
     } 
@@ -69,7 +71,7 @@ func AddBlog(model *Blog) (int64, error) {
 
 // Find 查询Blog
 func (c BlogConnection) Find(condition string, args ...interface{}) ([]*Blog, error) {
-    sqlStr := "SELECT `id`, `Address`, `title`, `blogText`, `uId`, `imageUrl`, `status`, `creator`, `createTime`, `updater`, `updateTime` FROM `tbBlog`"
+    sqlStr := "SELECT `id`, `Address`, `title`, `blogText`, `uId`, `imageUrl`, `ipfsUrl`, `status`, `creator`, `createTime`, `updater`, `updateTime` FROM `tbBlog`"
     if len(condition) > 0 {
         sqlStr = sqlStr + " WHERE " + condition
     }
@@ -89,6 +91,7 @@ func (c BlogConnection) Find(condition string, args ...interface{}) ([]*Blog, er
         for rows.Next() {
             model := Blog{}
             values := []interface{}{
+              new(interface{}),
               new(interface{}),
               new(interface{}),
               new(interface{}),
@@ -127,23 +130,27 @@ func (c BlogConnection) Find(condition string, args ...interface{}) ([]*Blog, er
                 model.ImageURL = tmp
             }
             if *(values[6].(*interface{})) != nil {
-                tmp := int((*(values[6].(*interface{}))).(int64))
-                model.Status = tmp
+                tmp := string((*(values[6].(*interface{}))).([]uint8))
+                model.IpfsURL = tmp
             }
             if *(values[7].(*interface{})) != nil {
-                tmp := string((*(values[7].(*interface{}))).([]uint8))
-                model.Creator = tmp
+                tmp := int((*(values[7].(*interface{}))).(int64))
+                model.Status = tmp
             }
             if *(values[8].(*interface{})) != nil {
-                tmp := (*(values[8].(*interface{}))).(time.Time)
-                model.CreateTime = tmp
+                tmp := string((*(values[8].(*interface{}))).([]uint8))
+                model.Creator = tmp
             }
             if *(values[9].(*interface{})) != nil {
-                tmp := string((*(values[9].(*interface{}))).([]uint8))
-                model.Updater = tmp
+                tmp := (*(values[9].(*interface{}))).(time.Time)
+                model.CreateTime = tmp
             }
             if *(values[10].(*interface{})) != nil {
-                tmp := (*(values[10].(*interface{}))).(time.Time)
+                tmp := string((*(values[10].(*interface{}))).([]uint8))
+                model.Updater = tmp
+            }
+            if *(values[11].(*interface{})) != nil {
+                tmp := (*(values[11].(*interface{}))).(time.Time)
                 model.UpdateTime = tmp
             }
             results = append(results, &model)
@@ -212,8 +219,8 @@ func GetBlog(condition string, args ...interface{}) (*Blog, error) {
 
 // Update 更新Blog
 func (c BlogConnection) Update(model *Blog) (int64, error) {
-    sqlStr := "UPDATE `tbBlog` SET `Address` = ?, `title` = ?, `blogText` = ?, `uId` = ?, `imageUrl` = ?, `status` = ?, `creator` = ?, `updater` = ? WHERE `id` = ?"
-    result, err := c().Exec(sqlStr, model.Address, model.Title, model.BlogText, model.UID, model.ImageURL, model.Status, model.Creator, model.Updater, model.ID)
+    sqlStr := "UPDATE `tbBlog` SET `Address` = ?, `title` = ?, `blogText` = ?, `uId` = ?, `imageUrl` = ?, `ipfsUrl` = ?, `status` = ?, `creator` = ?, `updater` = ? WHERE `id` = ?"
+    result, err := c().Exec(sqlStr, model.Address, model.Title, model.BlogText, model.UID, model.ImageURL, model.IpfsURL, model.Status, model.Creator, model.Updater, model.ID)
     if err != nil {
         return 0, err
     }
