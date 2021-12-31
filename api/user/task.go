@@ -1,6 +1,7 @@
 package user
 
 import (
+	"fmt"
 	"ginTemplate/api"
 	user "ginTemplate/model/user"
 	"strconv"
@@ -31,7 +32,7 @@ func DoGetUser(c *api.Context) (int, string, interface{}) {
 
 	parConstruct := map[string]*api.ParamConstruct{
 		"id":      {FieldName: "id", DefaultValue: "", CheckValue: nil, Need: false, Link: "and", Symbol: "="},
-		"address": {FieldName: "address", DefaultValue: "", CheckValue: nil, Need: false, Link: "and", Symbol: "="},
+		"address": {FieldName: "address", DefaultValue: "-1", CheckValue: nil, Need: false, Link: "and", Symbol: "="},
 		"nickName":{FieldName: "nickName", DefaultValue: "", CheckValue: nil, Need: false, Link: "and", Symbol: "like"},
 		"email":   {FieldName: "email", DefaultValue: "", CheckValue: nil, Need: false, Link: "and", Symbol: "="},
 		"introduction":{FieldName: "introduction", DefaultValue: "", CheckValue: nil, Need: false, Link: "and", Symbol: "="},
@@ -46,15 +47,17 @@ func DoGetUser(c *api.Context) (int, string, interface{}) {
 	}
 	logger.Debug("strCondition:", strCondition)
 	logger.Debug("args:", args)
+	fmt.Println(strCondition)
+	fmt.Println(args...)
 	
-	users, err := user.FindUser(strCondition, args...)
+	user, err := user.GetUser(strCondition, args...)
 	if err != nil {
 		return api.IllegalArgument, c.Error(err).Error(), nil
 	}
-	if (len(users) == 0) {
+	if (user == nil) {
 		return api.DatabaseError, c.Error("用户不存在").Error(), nil
 	}
-	return 0, "success", users[0]
+	return 0, "success", user
 }
 
 

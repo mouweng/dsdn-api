@@ -92,7 +92,6 @@ func NewServer(config *cli.Context) *gin.Engine {
 
 	r.Use(middleware.Auth())
 	r.Use(cors.Default())
-	fmt.Printf("test!!!")
 	SetupRouter(stdRouter)
 
 	return r
