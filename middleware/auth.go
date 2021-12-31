@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/wonderivan/logger"
 )
 
 func Auth() gin.HandlerFunc {

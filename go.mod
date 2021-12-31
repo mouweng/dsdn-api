@@ -10,6 +10,7 @@ require (
 	github.com/facebookgo/httpdown v0.0.0-20180706035922-5979d39b15c2 // indirect
 	github.com/facebookgo/pidfile v0.0.0-20150612191647-f242e2999868
 	github.com/facebookgo/stats v0.0.0-20151006221625-1b76add642e4 // indirect
+	github.com/gin-contrib/cors v1.3.1
 	github.com/gin-contrib/sessions v0.0.3
 	github.com/gin-gonic/gin v1.7.3
 	github.com/go-sql-driver/mysql v1.6.0

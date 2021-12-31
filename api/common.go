@@ -10,6 +10,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/urfave/cli"
+
+	"github.com/gin-contrib/cors"
 )
 
 func init() {
@@ -89,6 +91,8 @@ func NewServer(config *cli.Context) *gin.Engine {
 	}
 
 	r.Use(middleware.Auth())
+	r.Use(cors.Default())
+	fmt.Printf("test!!!")
 	SetupRouter(stdRouter)
 
 	return r
